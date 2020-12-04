@@ -8,7 +8,7 @@ export const siteTitle = 'Max Tabolin`s Page'
 
 function Layout({ children, home }) {
     return (
-        <div className={styles.container}>
+        <div className="bg-pink-300">
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="description" content="Learn how to build a personal website using Next.js" />
