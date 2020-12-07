@@ -2,7 +2,7 @@ module.exports = {
     purge: [],
     darkMode: false, // or 'media' or 'class'
     theme: {
-for        extend: {
+        extend: {
             textColor: {
                 'logoName': '#0C2146'
             },
