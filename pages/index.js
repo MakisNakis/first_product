@@ -1,14 +1,13 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-import Layout, { siteTitle } from '../components/Layout'
+import SiteLayout from "../layouts/SiteLayout";
 
-export default function Home() {
+const Home = () => {
     return (
-        <Layout home>
-            <Head>
-                <title>{siteTitle}</title>
-            </Head>
-        </Layout>
+        <div>
+            <SiteLayout>
+                <h1>Hello!</h1>
+            </SiteLayout>
+        </div>
     )
 }
+
+export default Home
