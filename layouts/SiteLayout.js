@@ -15,11 +15,11 @@ const SiteLayout = ({ children }) => {
                     <div className="">Consumer Electronics</div>
                     <button className="">Sign in</button>
                     <button className="">My cart</button>
-                    <div className=""><img class=""></img></div>
+                    <div className=""><img className=""></img></div>
                 </nav>
             </div>
 
-            <div class="bg-pink-200">{children}</div>
+            <div className="bg-pink-200">{children}</div>
         </div>
     )
 }
