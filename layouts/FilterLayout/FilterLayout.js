@@ -5,9 +5,9 @@ const FilterLayout = ({ children }) => {
     return (
         <div className="flex items-center flex-col">
             <nav className="flex justify-between w-3/4">
-                {filterMenuList.map(item => {
+                {filterMenuList.map((item, ix) => {
                     return (
-                        <Link href={item.route}>
+                        <Link key={ix} href={item.route}>
                             <a className="flex justify-between flex-col">
                                 <img src={item.srcImg}></img>
                                 <span className="text-xs text-center">{item.nameImg}</span>
