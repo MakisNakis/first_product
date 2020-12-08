@@ -1,11 +1,15 @@
-import SiteLayout from "../layouts/SiteLayout";
+import Products from '../components/Products'
 
-const Home = () => {
+const Home = (props) => {
+
+    // const { Component } = props
+    const Layout = Products.layout || ( children => <>{children}</>)
+
     return (
         <div>
-            <SiteLayout>
-                <h1>Hello!</h1>
-            </SiteLayout>
+            <Layout>
+                <Products/>
+            </Layout>
         </div>
     )
 }
