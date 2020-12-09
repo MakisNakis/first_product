@@ -1,17 +1,13 @@
+import FilterLayout from '../layouts/FilterLayout/FilterLayout'
 import Products from '../components/Products'
 
-const Home = (props) => {
-
-    // const { Component } = props
-    const Layout = Products.layout || ( children => <>{children}</>)
+const Home = () => {
 
     return (
-        <div>
-            <Layout>
-                <Products/>
-            </Layout>
-        </div>
+        <Products/>
     )
 }
+
+Home.layout = FilterLayout
 
 export default Home

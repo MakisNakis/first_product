@@ -1,4 +1,3 @@
-import FilterLayout from '../layouts/FilterLayout/FilterLayout'
 
 const Products = () => {
 
@@ -9,6 +8,5 @@ const Products = () => {
     )
 }
 
-Products.layout = FilterLayout
 
 export default Products

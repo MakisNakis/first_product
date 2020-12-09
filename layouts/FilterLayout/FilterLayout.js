@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { filterMenuList, filterProducts } from './filterLayoutConsts'
+import { filterMenuList, filterProducts } from './consts'
 
 const FilterLayout = ({ children }) => {
     return (
@@ -19,7 +19,7 @@ const FilterLayout = ({ children }) => {
 
             <section className="flex justify-center w-3/4">
                 <aside className="w-1/4">
-                    <section>
+                    {/* <section>
                         <span></span>
                         <ul>
                             <li>
@@ -45,7 +45,6 @@ const FilterLayout = ({ children }) => {
                     </section>
 
                     <section>
-
                         <div>
                             <span>Expanded Filters</span>
                             <button>{">"}</button>
@@ -58,8 +57,9 @@ const FilterLayout = ({ children }) => {
                             <label className="my-1 text-xs"><input type="checkbox"/>Price: Low → High</label>
                             <label className="my-1 text-xs"><input type="checkbox"/>Price: High → Low</label>
                         </div>
-                    </section>
+                    </section> */}
                 </aside>
+
                 <main className="w-3/4">{children}</main>
             </section>
         </div>
