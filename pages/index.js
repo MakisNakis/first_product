@@ -1,4 +1,4 @@
-import FilterLayout from '../layouts/FilterLayout/FilterLayout'
+import FilterLayout from '../layouts/FilterLayout'
 import Products from '../components/Products'
 
 const Home = () => {
