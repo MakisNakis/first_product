@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { filterMenuList, filterProducts } from './consts'
+import { filterMenuList } from './consts'
 
 const FilterLayout = ({ children }) => {
     return (
