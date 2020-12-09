@@ -1,4 +1,4 @@
-const CardOfProduct = ({ srcImg, desc, price, additional, rating, isDeal, deal }) => {
+const ProductCard = ({ srcImg, desc, price, additional, rating, isDeal, deal }) => {
     return (
         <div className="p-3 flex flex-col justify-between hover:shadow-lg rounded" style={{ 'flexBasis': 'calc(100% / 4)' }}>
             {/* TODO: как сделать, чтобы было несколько элкментов на странице? */}
@@ -30,4 +30,4 @@ const CardOfProduct = ({ srcImg, desc, price, additional, rating, isDeal, deal }
     )
 }
 
-export default CardOfProduct
+export default ProductCard

@@ -1,10 +1,10 @@
 import FilterLayout from '../layouts/FilterLayout'
-import Products from '../components/Products'
+import Catalog from '../components/Catalog'
 
 const Home = () => {
 
     return (
-        <Products/>
+        <Catalog/>
     )
 }
 

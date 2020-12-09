@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Card from '../CardOfProduct'
+import ProductCard from './ProductCard'
 import productsJSON from './products.json'
 
 const card1 = {
@@ -13,7 +13,7 @@ const card1 = {
     deal: 50,
 }
 
-const Products = () => {
+const Catalog = () => {
     const [products, setProducts] = React.useState(productsJSON.list)
 
     const addProduct = (newProduct) => {
@@ -32,7 +32,7 @@ const Products = () => {
             <div className="flex flex-row flex-wrap">
                 {products.map((item, ix) => {
                     return (
-                        <Card
+                        <ProductCard
                             key={ix}
                             srcImg={item.image}
                             desc={item.desc}
@@ -49,4 +49,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default Catalog
