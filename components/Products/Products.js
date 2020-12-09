@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Card from './CardOfProduct'
+import Card from '../CardOfProduct'
 import productsJSON from './products.json'
 
 const card1 = {
@@ -26,7 +26,7 @@ const Products = () => {
 
     return (
         <div>
-            <button className="w-full" onClick={addProduct.bind(this, card1)}>
+            <button className="w-full" onClick={() => addProduct(card1)}>
                 Add Card
             </button>
             <div className="flex flex-row flex-wrap">
