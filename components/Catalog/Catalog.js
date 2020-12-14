@@ -1,7 +1,8 @@
-import React from 'react'
+import { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { Card } from 'antd'
 
 import ProductCard from './ProductCard'
-import productsJSON from './products.json'
 
 const card1 = {
     image: '/images/products/Typewriter.png',
@@ -13,21 +14,19 @@ const card1 = {
     deal: 50,
 }
 
-const Catalog = () => {
-    const [products, setProducts] = React.useState(productsJSON.list)
+const Catalog = props => {
+    console.log(props)
 
-    const addProduct = (newProduct) => {
-        setProducts([...products, newProduct])
-    }
+    const { products, addProduct, starwars, uploadCharacterAsync } = props
 
-    React.useEffect(() => {
-        console.log(products)
-    }, [products])
+    useEffect(() => {
+        uploadCharacterAsync()
+    }, [])
 
     return (
         <div>
-            <button className="w-full" onClick={() => addProduct(card1)}>
-                Add Card
+            {/* <button className="w-full" onClick={() => addProduct()}>
+                Add card
             </button>
             <div className="flex flex-row flex-wrap">
                 {products.map((item, ix) => {
@@ -44,9 +43,39 @@ const Catalog = () => {
                         />
                     )
                 })}
+            </div> */}
+
+            <div className="m-5">
+                <button className="w-full mb-1 bg-yellow-100 border-2 border-yellow-300 rounded" onClick={() => uploadCharacterAsync()}>
+                    Random character
+                </button>
+                {Object.keys(starwars).length !== 0 && (
+                    <Card
+                        title={starwars.name}
+                        className="w-full px-3 py-2 flex flex-col text-2xl bg-pink-200 rounded hover:shadow-lg"
+                    >
+                        <span className="block text-sm">birth year: {starwars.birth_year}</span>
+                        <span className="block text-sm">eye color: {starwars.eye_color}</span>
+                        <span className="block text-sm">skin color: {starwars.skin_color}</span>
+                    </Card>
+                )}
             </div>
         </div>
     )
 }
 
-export default Catalog
+const mapState = state => ({
+    products: state.products.data,
+    starwars: state.starwars.data,
+})
+
+const mapDispatch = ({ products: { addProduct }, starwars: { uploadCharacterAsync } }) => ({
+    addProduct: () => addProduct(card1),
+    uploadCharacterAsync: () => uploadCharacterAsync(Math.floor(Math.random() * 10) + 1),
+})
+
+// TODO: аргументы передаем в mapDispatch`е?
+// TODO: tailwind сбрасывает стили ant. Как исправить?
+// TODO: как у нас? connect или useSelector и useDispatch?
+
+export default connect(mapState, mapDispatch)(Catalog)

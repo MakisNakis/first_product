@@ -1,5 +1,4 @@
-{
-    "list": [{
+[{
         "image": "/images/products/Typewriter.png",
         "desc": "Vintage Typewriter to post awesome stories about UI design and webdev.",
         "price": 49.50,
@@ -107,4 +106,3 @@
         "isDeal": false,
         "deal": 50
     }]
-}
