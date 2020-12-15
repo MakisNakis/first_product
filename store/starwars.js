@@ -1,26 +1,30 @@
-import ky from 'ky-universal'
+import api from '../api'
 
 const starwars = {
     state: {
         data: {},
+        loading: true,
+        error: false
     },
     reducers: {
         uploadCharacter(state, payload) {
             return {
                 ...state,
                 data: payload,
+                loading: false
             }
         },
     },
     effects: dispatch => ({
-        async uploadCharacterAsync(payload) {
-            const api = ky.create({
-                prefixUrl: 'https://swapi.dev',
-            })
+        async uploadCharacterAsync(payload, state) {
+
 
             try {
-                const body = await api.get(`api/people/${payload}`).json()
-                dispatch.starwars.uploadCharacter(body)
+                const res = await api.get(`people/${payload}`)
+                const data = await res.json()
+
+                dispatch.starwars.uploadCharacter(data)
+
             } catch (error) {
                 console.error('Fetch error:', error)
             }

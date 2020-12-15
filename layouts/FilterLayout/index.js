@@ -18,7 +18,7 @@ const FilterLayout = ({ children }) => {
             </nav>
 
             <section className="flex justify-center w-3/4">
-                <aside className="w-1/4">
+                {/* <aside className="w-1/4">
                     <section>
                         <span></span>
                         <ul>
@@ -58,7 +58,7 @@ const FilterLayout = ({ children }) => {
                             <label className="my-1 text-xs"><input type="checkbox"/>Price: High → Low</label>
                         </div>
                     </section>
-                </aside>
+                </aside> */}
 
                 <main className="w-3/4">{ children }</main>
             </section>
